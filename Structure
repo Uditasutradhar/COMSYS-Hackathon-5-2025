@@ -1,0 +1,27 @@
+vit-project/
+│
+├── README.md
+├── requirements.txt
+├── common/
+│   ├── utils.py                # Shared code: attention maps, metrics, etc.
+│   └── config_reader.py        # Optional: load config files
+│
+├── task_A/
+│   ├── train.py
+│   ├── evaluate.py
+│   ├── test.py
+│   ├── config.json
+│   ├── pretrained_weights/     # model.safetensors + config
+│   └── results/
+│       ├── metrics.json
+│       └── misclassified_images/
+│
+├── task_B/
+│   ├── train.py
+│   ├── evaluate.py
+│   ├── test.py
+│   ├── config.json
+│   ├── pretrained_weights/
+│   └── results/
+│       ├── metrics.json
+│       └── misclassified_images/
