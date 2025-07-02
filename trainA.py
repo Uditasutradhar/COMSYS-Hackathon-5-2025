@@ -64,9 +64,9 @@ def evaluate(model, dataloader, device, class_names, feature_extractor, save_dir
 
 def main():
     # === Paths ===
-    train_path = "/content/drive/MyDrive/AI_demos/Comys_Hackathon5/Task_A/train"
-    val_path = "/content/drive/MyDrive/AI_demos/Comys_Hackathon5/Task_A/val"
-    model_save_path = "/content/drive/MyDrive/vit-taskA-checkpoints/best_finetuned"
+    train_path = "content/Task_A/train"
+    val_path = "/content/Task_A/val"
+    model_save_path = "/content/best_finetuned"
     mislead_save_path = "results/misclassified_train_val"
 
     # === Setup ===
