@@ -1,0 +1,24 @@
+vit-finetune-project/---TASK A
+│
+├── requirements.txt
+├── train.py
+├── test.py
+├── config.json
+├── utils.py
+│
+├── pretrained_weights/
+│   └── model.pth
+│
+├── data/
+│   ├── train/               # Folder with training images
+│   └── val/                 # Folder with validation images
+│
+├── results/
+│   ├── metrics.json         # Accuracy, Precision, Recall, F1
+│   └── confusion_matrix.png
+│
+├── logs/
+│   └── training_log.json    # Epoch-wise loss/acc, optional
+│
+└── attention_maps/          # Optional: Attention visualizations
+    └── img001_attn.png
