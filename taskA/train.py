@@ -93,6 +93,8 @@ def main():
     optimizer = AdamW(model.parameters(), lr=2e-5)
     num_epochs = 5
     best_f1 = 0.0
+    criterion = torch.nn.CrossEntropyLoss()
+
 
     # === Training Loop ===
     for epoch in range(num_epochs):
@@ -103,7 +105,7 @@ def main():
         for images, labels in tqdm(train_loader, desc="Training"):
             images, labels = images.to(device), labels.to(device)
             outputs = model(images).logits
-            loss = torch.nn.functional.cross_entropy(outputs, labels)
+            loss = criterion(outputs, labels)
 
             optimizer.zero_grad()
             loss.backward()
