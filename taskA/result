@@ -1,1 +1,17 @@
+📊 Evaluation on Train Set
+✅ Accuracy : 1.0000
+🎯 Precision: 1.0000
+🔁 Recall   : 1.0000
+📌 F1 Score : 1.0000
 
+
+
+-------------------------
+
+
+
+📊 Evaluation Results on VAL SET:
+✅ Accuracy : 0.9739
+🎯 Precision: 0.9722
+🔁 Recall   : 0.9937
+📌 F1 Score : 0.9828
