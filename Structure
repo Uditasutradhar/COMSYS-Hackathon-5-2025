@@ -1,27 +1,26 @@
-vit-project/
+Comsys-hackathon-2025
 │
-├── README.md
-├── requirements.txt
-├── common/
-│   ├── utils.py                # Shared code: attention maps, metrics, etc.
-│   └── config_reader.py        # Optional: load config files
+├── README.md                 ← Overview of both tasks
+├── requirements.txt          ← Combined or task-wise noted requirements
 │
-├── task_A/
+├── task_A_vit/               ← Task A: Vision Transformer project
 │   ├── train.py
-│   ├── evaluate.py
 │   ├── test.py
-│   ├── config.json
-│   ├── pretrained_weights/     # model.safetensors + config
-│   └── results/
-│       ├── metrics.json
-│       └── misclassified_images/
-│
-├── task_B/
-│   ├── train.py
 │   ├── evaluate.py
-│   ├── test.py
 │   ├── config.json
 │   ├── pretrained_weights/
+│   │   ├── model.safetensors
+│   │   ├── config.json
+│   │   └── preprocessor_config.json
+│   └── results/
+│       ├── metrics.json/
+│       └── misclassified_images/
+│
+├── task_B_cnn/               ← Task B: CNN 
+│   ├── train.py
+│   ├── test.py
+│   ├── evaluate.py
+│   ├── model.pth             ← Torch model file (or another format)
 │   └── results/
 │       ├── metrics.json
-│       └── misclassified_images/
+│       └── predictions.csv
