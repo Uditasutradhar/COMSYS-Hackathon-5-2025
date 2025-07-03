@@ -1,14 +1,18 @@
 # COMSYS-Hackathon-5-2025
+<br>
 Team:
       Udita SUTRADHAR (Leader)
       Arpita Shaw (Member)
       Dr. Showmik Bhowmik (Supervisor)
+<br>
+
 Institute: Ghani Khan Chowdhury Institute of Engineering and Technology 
 
+<br>
 
 Task A 
 # 🚀 Gender Classification from Face Images using ViT
-
+<br>
 This project classifies gender (male/female) from facial images using the Vision Transformer (`ViT-base-patch16-224-in21k`) fine-tuned on a custom dataset.
 
 ---
