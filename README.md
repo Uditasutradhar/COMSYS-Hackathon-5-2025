@@ -66,28 +66,26 @@ On the Val set:
 We visualize the 'attention maps' of misclassified images to interpret the model’s decisions:
 ![Attention Example](./attention_overlay.jpg)
 > Attention maps generated using ViT’s final-layer self-attention and overlayed using OpenCV.
-
----
 #### ❗ Error Analysis
 We save all misclassified test images in `misclassified_test_images/` with filenames like:3_1_pred-female_true-male.jpg
 
 ---
-#  Face Recognition <br>
+# 🎭 Face Recognition <br>
 
 ---
 - 🔢 Type: Multi-class Classification
 - 🧾 Dataset:
   dataset/
-├── person_1/
-│   ├── image1.jpg  (actual clear image)
-│   └── distortion/
-│       ├── distort1.jpg
-│       └── distort2.jpg
-├── person_2/
-│   ├── image1.jpg
-│   └── distortion/
-│       └── distort1.jpg
-└── ...
+├── person_1/ <br>
+│   ├── image1.jpg  (actual clear image) <br>
+│   └── distortion/ <br>
+│       ├── distort1.jpg <br>
+│       └── distort2.jpg <br>
+├── person_2/ <br>
+│   ├── image1.jpg <br>
+│   └── distortion/ <br>
+│       └── distort1.jpg <br>
+└── ... <br>
 
 - 🏁Objective :-
 - Match an input face image to its corresponding person folder.
@@ -101,4 +99,38 @@ We save all misclassified test images in `misclassified_test_images/` with filen
 - 🔁 Recall   : 1.0000
 - 📌 F1 Score : 1.0000
 ---
-Model saved : Task_B/
+
+#### 🏗️ Model <br>
+-Backbone: ResNet-50 (pretrained on ImageNet) <br>
+-Head: Fully connected layer → L2 normalized embedding (512-d) <br>
+-Loss: Contrastive Loss for similarity learning <br>
+-Evaluation: Cosine similarity with threshold (default: 0.7) <br>
+
+---
+#### 📦 Pretrained Model
+Path: models/face_verification.pth <br>
+Format: PyTorch state_dict <br> 
+Size: ~95MB <br>
+Backbone: ResNet-50 <br>
+Embedding Dim: 512 <br>
+
+---
+
+
+## 📊 Overall Performance (Val Set) 🔥 <br>
+
+### 📊 Overall Performance (Val Set)
+
+| Metric     | Task A       | Task B       | Overall       |
+|------------|--------------|--------------|---------------|
+| Accuracy   | 0.9739       | 1.0000       | **0.9869**    |
+| Precision  | 0.9722       | 1.0000       | **0.9861**    |
+| Recall     | 0.9937       | 1.0000       | **0.9968**    |
+| F1-Score   | 0.9828       | 1.0000       | **0.9914**    | 
+
+---
+
+## 📜 License
+This project is developed for COMSYS Hackathon-5,2025 Competition. 
+
+
