@@ -129,23 +129,41 @@ Embedding Dim: 512 <br>
 | F1-Score   | 0.9828       | 1.0000       | **0.9914**    | 
 
 ---
+## 🚨 Troubleshooting
+<br>
+❌ CUDA Out of Memory <br>
+-Reduce batch_size in training (default: 32) <br>
+-Use a smaller model or lower image resolution <br>
+<br>
+📁 Dataset Path Issues <br>
+-Ensure your dataset is organized as per format above<br>
+-Check for missing distortion/ folders <br>
+-Use absolute paths for loading
+<br>
+⚙️ Missing Dependencies <br>
+Install all requirements~
+<br>
 
-
-The Pre - requisite <br>
+---
+### The Pre - requisite <br>
 DOWNLOAD AND UPLOAD THE MODEL IN YOUR GOOGLE DRIVE <br>
 MAKE SURE TO HAVE THE DATA SET IN YOUR GOOGLE DRIVE <br>
 
 from google.colab import drive <br>
 drive.mount('/content/drive')
+
 <br>
 mount your drive 
 <br>
+
 Run the test <br>
+
 CHANGE THE MODEL AND TEST PATH <br>
 <br>
 <br>
 Thankyou!🙏
 
+---
 ## 📜 License
 This project is developed for COMSYS Hackathon-5,2025 Competition. 
 
