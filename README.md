@@ -119,10 +119,7 @@ Embedding Dim: 512 <br>
 
 ---
 
-
-## 📊 Overall Performance (Val Set) 🔥 <br>
-
-### 📊 Overall Performance (Val Set)
+### 📊 Overall Performance (Val Set) 🔥
 
 | Metric     | Task A       | Task B       | Overall       |
 |------------|--------------|--------------|---------------|
