@@ -78,3 +78,8 @@ We save all misclassified test images in `misclassified_test_images/` with filen
 
 #  Face Recognition <br>
 
+📊 Face Verification Results:
+Accuracy : 1.0000
+Precision: 1.0000
+Recall   : 1.0000
+F1-Score : 1.0000
