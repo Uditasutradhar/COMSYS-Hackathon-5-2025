@@ -17,7 +17,10 @@ Institute: Ghani Khan Chowdhury Institute of Engineering and Technology, Malda
 
 ### Task B: Face Recognition (Multi-class Classification) <br>
 -Objective: Assign each face image to a correct person identity from a known set of individuals.<br>
-Evaluation Metrics: Accuracy | Precision | Recall | F1-Score
+-Evaluation Metrics: Accuracy | Precision | Recall | F1-Score
+
+#### UPLOAD THE MODEL AND DATASET IN YOUR GOOGLE DRIVE, MOUNT DRIVE TO GOOGLE COLAB
+#### RUN THE TEST CODE IN GOOGLE COLAB, JUST MODIFY MODEL AND DATASET PATH
 
 ## 🚀 Gender Classification 
 <br>
