@@ -1,3 +1,28 @@
+import os
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from torchvision import transforms
+from torchvision.models import resnet50, ResNet50_Weights
+from PIL import Image
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+import json
+
+# ✅ Define the model
+class FaceEmbeddingModel(nn.Module):
+    def __init__(self, embedding_dim=512):
+        super(FaceEmbeddingModel, self).__init__()
+        base = resnet50(weights=ResNet50_Weights.DEFAULT)
+        self.feature_extractor = nn.Sequential(*list(base.children())[:-1])
+        self.embedding = nn.Linear(base.fc.in_features, embedding_dim)
+
+    def forward(self, x):
+        x = self.feature_extractor(x)
+        x = x.view(x.size(0), -1)
+        x = self.embedding(x)
+        return F.normalize(x, p=2, dim=1)
+
+# ✅ Evaluation function
 def evaluate_face_verification(test_path, model_path, threshold=0.7):
     transform = transforms.Compose([
         transforms.Resize((224, 224)),
@@ -5,7 +30,6 @@ def evaluate_face_verification(test_path, model_path, threshold=0.7):
         transforms.Normalize([0.485, 0.456, 0.406],
                              [0.229, 0.224, 0.225])
     ])
-
     save_results_to = os.path.join(test_path, "face_verification_results.json")
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -81,7 +105,6 @@ def evaluate_face_verification(test_path, model_path, threshold=0.7):
     print(f"Recall   : {rec:.4f}")
     print(f"F1-Score : {f1:.4f}")
 
-    # Save results
     os.makedirs(os.path.dirname(save_results_to), exist_ok=True)
     with open(save_results_to, "w") as f:
         json.dump({
@@ -95,4 +118,11 @@ def evaluate_face_verification(test_path, model_path, threshold=0.7):
         }, f, indent=2)
 
     print(f"\n✅ Results saved to: {save_results_to}")
+
+# ✅ MODIFY THIS ONLY
+test_path = "/content/drive/MyDrive/AI_demos/Comys_Hackathon5/Task_B/test"
+model_path = "/content/drive/MyDrive/AI_demos/Comys_Hackathon5/Task_B/face_verification.pth"
+
+# ✅ Run
+evaluate_face_verification(test_path, model_path)
 
