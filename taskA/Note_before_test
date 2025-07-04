@@ -1,0 +1,13 @@
+DOWNLOAD AND UPLOAD THE MODEL IN YOUR GOOGLE DRIVE
+MAKE SURE TO HAVE THE DATA SET IN YOUR GOOGLE DRIVE 
+
+from google.colab import drive
+drive.mount('/content/drive')
+
+mount your drive 
+
+Run the test 
+CHANGE THE MODEL AND TEST PATH 
+
+
+Thankyou!🙏
