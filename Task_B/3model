@@ -1,0 +1,27 @@
+import torch.nn as nn
+import torch.nn.functional as F
+from torchvision.models import resnet50 # Import resnet50
+
+class FaceEmbeddingModel(nn.Module):
+    def __init__(self, embedding_dim=512):
+        super(FaceEmbeddingModel, self).__init__()
+        base = resnet50(pretrained=True)
+        self.feature_extractor = nn.Sequential(*list(base.children())[:-1])
+        self.embedding = nn.Linear(base.fc.in_features, embedding_dim)
+
+    def forward(self, x):
+        x = self.feature_extractor(x)
+        x = x.view(x.size(0), -1)
+        x = self.embedding(x)
+        return F.normalize(x, p=2, dim=1)
+
+class ContrastiveLoss(nn.Module):
+    def __init__(self, margin=1.0):
+        super(ContrastiveLoss, self).__init__()
+        self.margin = margin
+
+    def forward(self, output1, output2, label):
+        distance = F.pairwise_distance(output1, output2)
+        loss = (label.float() * distance.pow(2)) + \
+               ((1 - label.float()) * torch.clamp(self.margin - distance, min=0).pow(2))
+        return loss.mean()
