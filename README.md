@@ -130,6 +130,22 @@ Embedding Dim: 512 <br>
 
 ---
 
+
+The Pre - requisite <br>
+DOWNLOAD AND UPLOAD THE MODEL IN YOUR GOOGLE DRIVE <br>
+MAKE SURE TO HAVE THE DATA SET IN YOUR GOOGLE DRIVE <br>
+
+from google.colab import drive <br>
+drive.mount('/content/drive')
+<br>
+mount your drive 
+<br>
+Run the test <br>
+CHANGE THE MODEL AND TEST PATH <br>
+<br>
+<br>
+Thankyou!🙏
+
 ## 📜 License
 This project is developed for COMSYS Hackathon-5,2025 Competition. 
 
