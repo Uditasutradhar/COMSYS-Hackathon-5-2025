@@ -2,7 +2,7 @@
 data_path = "/content/drive/MyDrive/AI_demos/Comys_Hackathon5/Task_B"
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 batch_size = 32
-epochs = 15
+epochs = 15 #can change
 margin = 1.0
 
 # Transforms
