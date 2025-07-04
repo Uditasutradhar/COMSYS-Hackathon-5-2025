@@ -32,8 +32,7 @@ This project classifies gender (male/female) from facial images using the Vision
 
 ---
 
-## 🏗️ Model
-
+#### 🏗️ Model <br>
 - Pretrained `ViT-Base-Patch16-224-IN21K`
 - Fine-tuned using AdamW optimizer with:
   - LR: 2e-5
@@ -42,7 +41,7 @@ This project classifies gender (male/female) from facial images using the Vision
 
 ---
 
-## 🏃 Training Pipeline
+#### 🏃 Training Pipeline
 
 - ✅ Checkpointing per epoch
 - ✅ Best model saved as 'best_finetuned'
@@ -50,7 +49,7 @@ This project classifies gender (male/female) from facial images using the Vision
 
 ---
 
-## 📊 Final Evaluation Results
+#### 📊 Final Evaluation Results
 
 On the Val set:
 
@@ -62,24 +61,44 @@ On the Val set:
 
 ---
 
-## 🔬 Explain ability
+🔬 Explain ability
 
 We visualize the 'attention maps' of misclassified images to interpret the model’s decisions:
-
 ![Attention Example](./attention_overlay.jpg)
-
 > Attention maps generated using ViT’s final-layer self-attention and overlayed using OpenCV.
 
 ---
-
-## ❗ Error Analysis
-
+#### ❗ Error Analysis
 We save all misclassified test images in `misclassified_test_images/` with filenames like:3_1_pred-female_true-male.jpg
 
+---
 #  Face Recognition <br>
 
-📊 Face Verification Results:
-Accuracy : 1.0000
-Precision: 1.0000
-Recall   : 1.0000
-F1-Score : 1.0000
+---
+- 🔢 Type: Multi-class Classification
+- 🧾 Dataset:
+  dataset/
+├── person_1/
+│   ├── image1.jpg  (actual clear image)
+│   └── distortion/
+│       ├── distort1.jpg
+│       └── distort2.jpg
+├── person_2/
+│   ├── image1.jpg
+│   └── distortion/
+│       └── distort1.jpg
+└── ...
+
+- 🏁Objective :-
+- Match an input face image to its corresponding person folder.
+-If a test image (or its distorted variant) matches any image in the same folder, it is considered a match (label = 1). 
+-If it matches an image from a different folder, it's a non-match (label = 0).
+
+---
+📊 Face Verification Results: (on Val Set)
+- ✅ Accuracy : 1.0000
+- 🎯 Precision: 1.0000
+- 🔁 Recall   : 1.0000
+- 📌 F1 Score : 1.0000
+---
+Model saved : Task_B/
