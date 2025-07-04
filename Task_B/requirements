@@ -1,0 +1,23 @@
+# ✅ Step 1: Install & Import Libraries
+!pip install -q torch torchvision
+
+import os
+import torch
+import torch.nn as nn
+import torch.optim as optim
+import torch.nn.functional as F
+from torch.utils.data import Dataset, DataLoader
+from torchvision.models import resnet50
+from torchvision import transforms
+from PIL import Image
+from tqdm import tqdm
+import numpy as np
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+import json
+import random
+from torchvision.models import resnet50, ResNet50_Weights
+
+
+# ✅ Step 2: Mount Google Drive
+from google.colab import drive
+drive.mount('/content/drive')
