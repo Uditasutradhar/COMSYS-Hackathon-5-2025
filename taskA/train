@@ -74,7 +74,7 @@ def main():
     feature_extractor = ViTFeatureExtractor.from_pretrained("google/vit-base-patch16-224")
     model = ViTForImageClassification.from_pretrained(
         "google/vit-base-patch16-224",
-        num_labels=5  # <-- Change to your number of classes
+        num_labels=2  # (MALE OR FEMALE)
     ).to(device)
 
     transform = transforms.Compose([
